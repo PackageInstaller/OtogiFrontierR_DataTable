@@ -1,3 +1,8 @@
+"""
+https://otogi-rest.otogi-frontier.com/api/UGachas
+卡池视频需要带上token get获取,这里就不放了
+"""
+
 import json, os, re, gzip, shutil, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -10,12 +15,12 @@ from rich.progress import (Progress, SpinnerColumn, BarColumn, TextColumn,
 
 
 ENV_URL = ("https://osapi.dmm.com/gadgets/makeRequest?"
-           "url=http://otogi-sp.trafficmanager.net/api/Configuration/Environment&httpMethod=POST")
+            "url=http://otogi-sp.trafficmanager.net/api/Configuration/Environment&httpMethod=POST")
 WEBGL_MANIFEST_URL = "https://web-assets.otogi-frontier.com/prodassets/GeneralWebGL/Assets/WebGL"
 ASSET_BASE_URL = "https://web-assets.otogi-frontier.com/prodassets/GeneralWebGL/Assets/"
 MASTERDATA_URL = "https://web-assets.otogi-frontier.com/prodassets/MasterData/"
 PATCH_URL_TEMPLATE = ("https://web-assets.otogi-frontier.com/prodassets/GeneralWebGL/AssetBundlePatch/"
-                      "{version}/0_{version}{suffix}.csv")
+                        "{version}/0_{version}{suffix}.csv")
 
 MASTERDATA_FILES = [
     "MAccessory.gz", "MFoods.gz", "MItems.gz", "MMaterials.gz", "MMonsters.gz",
